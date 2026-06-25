@@ -1,0 +1,90 @@
+<!-- ARCHITECTURE Extension: compliance -->
+<!-- Appended to base ARCHITECTURE.md for compliance/audit projects -->
+
+## 7. Standard / Framework
+
+### Primary Standard
+<!-- ISO 27001:2022 / ГОСТ Р 57580.1 / ФЗ-152 / PCI DSS v4.0 / GDPR / NIST CSF 2.0 -->
+
+| Parameter | Value |
+|-----------|-------|
+| Standard | <!-- ISO 27001:2022 --> |
+| Scope | <!-- All IT systems processing customer data --> |
+| Certification body | <!-- BSI / ТЮФ --> |
+| Current status | <!-- Gap assessment / Implementation / Audit / Certified --> |
+| Target date | <!-- Q4 2026 --> |
+
+### Applicable Requirements
+<!-- Which clauses/controls apply to this scope -->
+
+## 8. Control Domains
+
+### Control Mapping
+| Domain | Controls | Implemented | Partially | Not Implemented | N/A |
+|--------|----------|-------------|-----------|-----------------|-----|
+<!-- | A.5 Organizational | 8 | 5 | 2 | 1 | 0 | -->
+<!-- | A.6 People | 8 | 3 | 3 | 2 | 0 | -->
+<!-- | A.7 Physical | 14 | 10 | 2 | 1 | 1 | -->
+<!-- | A.8 Technological | 34 | 20 | 8 | 4 | 2 | -->
+
+### Statement of Applicability (SoA)
+<!-- Reference to full SoA document -->
+<!-- SoA location: {{project_path}}/evidence/soa.xlsx -->
+
+## 9. Evidence Structure
+
+### Evidence Repository
+```
+{{project_path}}/evidence/
+├── policies/          # Approved policies and procedures
+├── implementation/    # Screenshots, configs, logs
+├── testing/           # Pen test reports, audit logs
+├── training/          # Training records, certificates
+└── reviews/           # Management review minutes
+```
+
+### Evidence Naming Convention
+<!-- Format: {domain}-{control}-{type}-{date}.{ext} -->
+<!-- Example: A8-8.1-screenshot-20260115.png -->
+
+### Evidence Status
+| Control | Evidence Type | Location | Status | Reviewer |
+|---------|-------------|----------|--------|----------|
+<!-- | A.8.1 | Policy + config | policies/access-control.md | Complete | CISO | -->
+
+## 10. Audit Trail
+
+### Audit History
+| Date | Type | Auditor | Scope | Result | Findings |
+|------|------|---------|-------|--------|----------|
+<!-- | 2025-12 | Internal | Internal team | Full | 5 NC, 12 Obs | audit-2025-12.pdf | -->
+<!-- | 2026-06 | External | Certification body | Full | TBD | — | -->
+
+### Finding Tracking
+| ID | Date | Finding | Severity | Owner | Due Date | Status |
+|----|------|---------|----------|-------|----------|--------|
+<!-- | NC-001 | 2025-12-15 | Missing backup testing | Major | IT Admin | 2026-02-15 | Closed | -->
+
+## 11. Gap Tracking
+
+### Current Gaps
+| ID | Control | Gap Description | Risk | Priority | Owner | Plan |
+|----|---------|----------------|------|----------|-------|------|
+<!-- | GAP-001 | A.8.8 | No vulnerability management process | High | P1 | CISO | Implement OpenVAS + monthly scans | -->
+
+### Remediation Timeline
+<!-- Gantt or timeline of gap closure activities -->
+
+## 12. Reporting Cadence
+
+| Report | Audience | Frequency | Owner | Template |
+|--------|----------|-----------|-------|----------|
+<!-- | Compliance dashboard | Management | Monthly | CISO | templates/monthly-report.md | -->
+<!-- | Gap status | Project team | Bi-weekly | PM | templates/gap-status.md | -->
+<!-- | Audit readiness | Certification body | Pre-audit | CISO | templates/readiness-report.md | -->
+
+### Escalation Path
+| Trigger | Action | Escalate To | SLA |
+|---------|--------|-------------|-----|
+<!-- | Critical gap found | Immediate notification | CISO + CTO | 24h | -->
+<!-- | Audit finding NC | Remediation plan | Management | 5 business days | -->

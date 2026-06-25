@@ -1,0 +1,132 @@
+#!/usr/bin/env python3
+"""
+MCP Auto-Provision Hook (SessionStart)
+
+Automatically ensures essential MCP servers are loaded in LOCAL scope
+for the current project. This is needed because Claude Code only loads
+LOCAL-scoped servers (per-project in ~/.claude.json), not user-scoped.
+
+Runs on SessionStart — checks if essential servers exist in current
+project's local scope. If not, provisions them from the profile manager.
+
+Output: JSON with hookSpecificOutput for session context.
+"""
+
+import json
+import os
+import sys
+
+CONFIG_FILE = os.path.expanduser("~/.claude.json")
+
+# Essential servers — direct binaries where available
+ESSENTIAL_SERVERS = {
+    "github": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-github"],
+        "env": {}
+    },
+    "fetch": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": ["mcp-server-fetch"],
+        "env": {}
+    },
+    "filesystem": {
+        "type": "stdio",
+        "command": "/usr/local/bin/mcp-server-filesystem",
+        "args": [os.path.expanduser("~"), "/opt", "/tmp"],
+        "env": {}
+    },
+    "memory": {
+        "type": "stdio",
+        "command": "/usr/local/bin/mcp-server-memory",
+        "args": [],
+        "env": {"MEMORY_FILE": os.path.expanduser("~/.claude/mcp_data/memory.json")}
+    },
+    "metrics": {
+        "type": "stdio",
+        "command": os.path.expanduser("~/.claude/evaluation/venv/bin/python"),
+        "args": [os.path.expanduser("~/.claude/tools/mcp_metrics_server.py")],
+        "env": {"PYTHONUNBUFFERED": "1"}
+    },
+}
+
+
+def inject_tokens(servers: dict) -> dict:
+    """Inject API tokens from user-scope config."""
+    try:
+        with open(CONFIG_FILE) as f:
+            data = json.load(f)
+        user_servers = data.get("mcpServers", {})
+        for name, cfg in servers.items():
+            if name in user_servers:
+                user_env = user_servers[name].get("env", {})
+                for key, val in user_env.items():
+                    if val:
+                        cfg.setdefault("env", {})[key] = val
+    except Exception:
+        pass
+    return servers
+
+
+def main():
+    try:
+        # Determine current project path from CWD
+        project_path = os.getcwd()
+
+        with open(CONFIG_FILE) as f:
+            data = json.load(f)
+
+        # Get or create project entry
+        projects = data.setdefault("projects", {})
+        project = projects.setdefault(project_path, {})
+        servers = project.setdefault("mcpServers", {})
+
+        # Check what's missing
+        missing = []
+        for name, cfg in ESSENTIAL_SERVERS.items():
+            if name not in servers:
+                missing.append(name)
+                servers[name] = dict(cfg)
+                servers[name]["env"] = dict(cfg.get("env", {}))
+
+        if missing:
+            # Inject tokens from user-scope
+            inject_tokens(servers)
+
+            # Save config
+            with open(CONFIG_FILE, "w") as f:
+                json.dump(data, f, indent=2)
+
+            result = {
+                "hookSpecificOutput": {
+                    "additionalContext": (
+                        f"MCP Auto-Provision: Added {len(missing)} essential servers "
+                        f"to {project_path}: {', '.join(missing)}. "
+                        f"Total local servers: {len(servers)}."
+                    )
+                }
+            }
+        else:
+            result = {
+                "hookSpecificOutput": {
+                    "additionalContext": (
+                        f"MCP: {len(servers)} servers loaded for {project_path}."
+                    )
+                }
+            }
+
+        print(json.dumps(result))
+
+    except Exception as e:
+        # Non-blocking — don't break session start on errors
+        print(json.dumps({
+            "hookSpecificOutput": {
+                "additionalContext": f"MCP auto-provision warning: {e}"
+            }
+        }))
+
+
+if __name__ == "__main__":
+    main()

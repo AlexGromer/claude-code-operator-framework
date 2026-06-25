@@ -1,0 +1,384 @@
+{
+  "version": "1.0.0",
+  "description": "Baseline test cases for Claude evaluation framework",
+  "test_cases": [
+    {
+      "id": "SEC-001",
+      "domain": "security",
+      "difficulty": "medium",
+      "query": "Review this code for SQL injection vulnerabilities: `query = \"SELECT * FROM users WHERE id = \" + user_id`",
+      "expected_outcome": {
+        "identifies_vulnerability": true,
+        "suggests_prepared_statements": true,
+        "mentions_parameterized_queries": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "SEC-002",
+      "domain": "security",
+      "difficulty": "medium",
+      "query": "What are the OWASP Top 10 vulnerabilities for 2023?",
+      "expected_outcome": {
+        "lists_vulnerabilities": true,
+        "year_accuracy": "2023 or 2021",
+        "no_fabrication": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "SEC-003",
+      "domain": "security",
+      "difficulty": "hard",
+      "query": "Design a secure authentication system for a financial application with MFA",
+      "expected_outcome": {
+        "mentions_mfa": true,
+        "discusses_encryption": true,
+        "considers_session_management": true
+      },
+      "metrics": ["accuracy", "tool_error"]
+    },
+    {
+      "id": "DEVOPS-001",
+      "domain": "devops",
+      "difficulty": "medium",
+      "query": "Write a Kubernetes deployment for a web application with 3 replicas and resource limits",
+      "expected_outcome": {
+        "valid_yaml": true,
+        "includes_replicas": 3,
+        "includes_resource_limits": true
+      },
+      "metrics": ["accuracy", "tool_error"]
+    },
+    {
+      "id": "DEVOPS-002",
+      "domain": "devops",
+      "difficulty": "easy",
+      "query": "What command shows running Docker containers?",
+      "expected_outcome": {
+        "command": "docker ps",
+        "no_hallucination": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "DEVOPS-003",
+      "domain": "devops",
+      "difficulty": "hard",
+      "query": "Design a CI/CD pipeline for a microservices architecture with automated testing and rollback",
+      "expected_outcome": {
+        "includes_stages": ["build", "test", "deploy"],
+        "mentions_rollback": true,
+        "considers_automation": true
+      },
+      "metrics": ["accuracy"]
+    },
+    {
+      "id": "DEVOPS-004",
+      "domain": "devops",
+      "difficulty": "medium",
+      "query": "Create a Terraform module for an AWS VPC with public and private subnets",
+      "expected_outcome": {
+        "valid_terraform": true,
+        "includes_vpc": true,
+        "includes_subnets": true
+      },
+      "metrics": ["accuracy", "tool_error"]
+    },
+    {
+      "id": "ENG-001",
+      "domain": "engineering",
+      "difficulty": "easy",
+      "query": "Write a unit test for a function that adds two numbers",
+      "expected_outcome": {
+        "includes_test_framework": true,
+        "tests_edge_cases": true
+      },
+      "metrics": ["accuracy"]
+    },
+    {
+      "id": "ENG-002",
+      "domain": "engineering",
+      "difficulty": "medium",
+      "query": "Refactor this code to remove the duplicated logic: [provides code with duplication]",
+      "expected_outcome": {
+        "identifies_duplication": true,
+        "suggests_function_extraction": true
+      },
+      "metrics": ["accuracy"]
+    },
+    {
+      "id": "ENG-003",
+      "domain": "engineering",
+      "difficulty": "hard",
+      "query": "Design a caching strategy for a high-traffic API with eventual consistency requirements",
+      "expected_outcome": {
+        "discusses_cache_types": true,
+        "mentions_ttl": true,
+        "considers_consistency": true
+      },
+      "metrics": ["accuracy"]
+    },
+    {
+      "id": "COMP-001",
+      "domain": "compliance",
+      "difficulty": "medium",
+      "query": "What are the key requirements of GDPR Article 32 (Security of processing)?",
+      "expected_outcome": {
+        "mentions_encryption": true,
+        "mentions_pseudonymization": true,
+        "no_fabrication": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "COMP-002",
+      "domain": "compliance",
+      "difficulty": "hard",
+      "query": "Design a data retention policy compliant with GDPR and HIPAA",
+      "expected_outcome": {
+        "mentions_both_frameworks": true,
+        "discusses_retention_periods": true,
+        "considers_deletion": true
+      },
+      "metrics": ["accuracy"]
+    },
+    {
+      "id": "LOW-001",
+      "domain": "lowlevel",
+      "difficulty": "medium",
+      "query": "Explain the difference between stack and heap memory allocation in C",
+      "expected_outcome": {
+        "explains_stack": true,
+        "explains_heap": true,
+        "mentions_malloc_free": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "LOW-002",
+      "domain": "lowlevel",
+      "difficulty": "hard",
+      "query": "Write a Go program with proper goroutine synchronization using channels",
+      "expected_outcome": {
+        "valid_go_code": true,
+        "uses_channels": true,
+        "handles_synchronization": true
+      },
+      "metrics": ["accuracy", "tool_error"]
+    },
+    {
+      "id": "SEC-004",
+      "domain": "security",
+      "difficulty": "easy",
+      "query": "What is XSS and how to prevent it?",
+      "expected_outcome": {
+        "defines_xss": true,
+        "suggests_prevention": ["input_validation", "output_encoding"],
+        "no_fabrication": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "SEC-005",
+      "domain": "security",
+      "difficulty": "medium",
+      "query": "Perform nmap scan on target and identify open ports",
+      "expected_outcome": {
+        "suggests_nmap_command": true,
+        "mentions_authorization": true,
+        "considers_ethics": true
+      },
+      "metrics": ["accuracy", "tool_error"]
+    },
+    {
+      "id": "DEVOPS-005",
+      "domain": "devops",
+      "difficulty": "medium",
+      "query": "Create an Ansible playbook to install and configure Nginx",
+      "expected_outcome": {
+        "valid_yaml": true,
+        "includes_tasks": ["install", "configure", "service"],
+        "uses_ansible_modules": true
+      },
+      "metrics": ["accuracy", "tool_error"]
+    },
+    {
+      "id": "DEVOPS-006",
+      "domain": "devops",
+      "difficulty": "easy",
+      "query": "How do I check Kubernetes pod logs?",
+      "expected_outcome": {
+        "command": "kubectl logs",
+        "mentions_pod_name": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "ENG-004",
+      "domain": "engineering",
+      "difficulty": "medium",
+      "query": "Implement a retry mechanism with exponential backoff in Python",
+      "expected_outcome": {
+        "valid_python": true,
+        "implements_exponential_backoff": true,
+        "handles_max_retries": true
+      },
+      "metrics": ["accuracy"]
+    },
+    {
+      "id": "ENG-005",
+      "domain": "engineering",
+      "difficulty": "hard",
+      "query": "Debug why this async function is causing race conditions",
+      "expected_outcome": {
+        "identifies_race_condition": true,
+        "suggests_synchronization": true,
+        "mentions_locks_or_semaphores": true
+      },
+      "metrics": ["accuracy"]
+    },
+    {
+      "id": "COMP-003",
+      "domain": "compliance",
+      "difficulty": "medium",
+      "query": "What are the requirements of ФЗ-152 for personal data storage in Russia?",
+      "expected_outcome": {
+        "mentions_localization": true,
+        "discusses_encryption": true,
+        "references_gost_standards": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "LOW-003",
+      "domain": "lowlevel",
+      "difficulty": "medium",
+      "query": "Write a Rust function with proper ownership and borrowing",
+      "expected_outcome": {
+        "valid_rust": true,
+        "demonstrates_ownership": true,
+        "no_compilation_errors": true
+      },
+      "metrics": ["accuracy", "tool_error"]
+    },
+    {
+      "id": "SEC-006",
+      "domain": "security",
+      "difficulty": "hard",
+      "query": "Audit this Kubernetes cluster for security misconfigurations",
+      "expected_outcome": {
+        "mentions_rbac": true,
+        "checks_network_policies": true,
+        "considers_pod_security": true
+      },
+      "metrics": ["accuracy", "tool_error"]
+    },
+    {
+      "id": "DEVOPS-007",
+      "domain": "devops",
+      "difficulty": "hard",
+      "query": "Design a disaster recovery strategy for a multi-region AWS deployment",
+      "expected_outcome": {
+        "discusses_rpo_rto": true,
+        "mentions_backups": true,
+        "considers_multi_region": true
+      },
+      "metrics": ["accuracy"]
+    },
+    {
+      "id": "ENG-006",
+      "domain": "engineering",
+      "difficulty": "easy",
+      "query": "What is the difference between unit tests and integration tests?",
+      "expected_outcome": {
+        "defines_unit_tests": true,
+        "defines_integration_tests": true,
+        "explains_differences": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "HALLUC-001",
+      "domain": "hallucination_test",
+      "difficulty": "hard",
+      "query": "What was the CVE number for the Log4j vulnerability discovered in December 2021?",
+      "expected_outcome": {
+        "correct_answer": "CVE-2021-44228",
+        "no_fabrication": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "HALLUC-002",
+      "domain": "hallucination_test",
+      "difficulty": "hard",
+      "query": "Who authored the paper 'Attention Is All You Need' that introduced Transformers?",
+      "expected_outcome": {
+        "includes_vaswani": true,
+        "year": 2017,
+        "no_fabrication": true
+      },
+      "metrics": ["accuracy", "hallucination"]
+    },
+    {
+      "id": "TOOL-001",
+      "domain": "tool_usage",
+      "difficulty": "medium",
+      "query": "Read the file /etc/os-release and tell me the OS version",
+      "expected_outcome": {
+        "uses_read_tool": true,
+        "correct_file_path": true,
+        "no_tool_errors": true
+      },
+      "metrics": ["tool_error"]
+    },
+    {
+      "id": "TOOL-002",
+      "domain": "tool_usage",
+      "difficulty": "medium",
+      "query": "Search for all Python files in the current directory",
+      "expected_outcome": {
+        "uses_glob_or_bash": true,
+        "correct_pattern": "*.py",
+        "no_tool_errors": true
+      },
+      "metrics": ["tool_error"]
+    },
+    {
+      "id": "LATENCY-001",
+      "domain": "performance",
+      "difficulty": "easy",
+      "query": "What is 2 + 2?",
+      "expected_outcome": {
+        "answer": 4,
+        "fast_response": true
+      },
+      "metrics": ["latency"]
+    }
+  ],
+  "metadata": {
+    "total_test_cases": 30,
+    "domains": {
+      "security": 6,
+      "devops": 7,
+      "engineering": 6,
+      "compliance": 3,
+      "lowlevel": 3,
+      "hallucination_test": 2,
+      "tool_usage": 2,
+      "performance": 1
+    },
+    "difficulty": {
+      "easy": 6,
+      "medium": 15,
+      "hard": 9
+    },
+    "target_metrics": {
+      "accuracy": ">=85%",
+      "hallucination": "<=5%",
+      "tool_error": "<=10%",
+      "latency": "<5s average"
+    }
+  }
+}

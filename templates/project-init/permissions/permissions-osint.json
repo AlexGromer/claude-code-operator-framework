@@ -1,0 +1,31 @@
+{
+  "type": "osint",
+  "description": "Open source intelligence gathering. Passive lookups in allow, active enumeration and profiling tools in ask.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)",
+    "Bash(whois:*)",
+    "Bash(dig:*)",
+    "Bash(curl:-s*)",
+    "Bash(host:*)",
+    "Bash(nslookup:*)",
+    "Bash(censys:*)",
+    "Bash(shodan:*)",
+    "Bash(greynoise:*)"
+  ],
+  "ask": [
+    "Bash(sherlock:*)",
+    "Bash(maigret:*)",
+    "Bash(subfinder:*)",
+    "Bash(bbot:*)",
+    "Bash(phoneinfoga:*)",
+    "mcp__pd-tools__subfinder",
+    "mcp__pd-tools__httpx",
+    "mcp__pd-tools__katana"
+  ],
+  "deny": [],
+  "mcp_profiles": [
+    "osint",
+    "github"
+  ]
+}

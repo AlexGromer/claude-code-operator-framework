@@ -1,0 +1,55 @@
+{
+  "versions": {
+    "7.3.0": {
+      "added": [],
+      "changed": ["settings.local.json.template"],
+      "notes": "Post-Plan Workflow"
+    },
+    "7.4.0": {
+      "added": ["BACKLOG.md.template"],
+      "changed": ["claude-ver.template", "settings.local.json.template"],
+      "notes": "Go MCP, per-domain permissions"
+    },
+    "7.5.0": {
+      "added": [],
+      "changed": ["gitignore.template"],
+      "notes": "Plugins removed, GC 12-13"
+    },
+    "7.6.0": {
+      "added": [],
+      "changed": [],
+      "notes": "tools-mcp migration"
+    },
+    "7.7.0": {
+      "added": ["FILEMAP.md.template"],
+      "changed": ["claude-ver.template", "settings.local.json.template", "ARCHITECTURE.md.template"],
+      "notes": "VERSION file, git permissions granularity, GC CLI+anacron, upgrade system, 4 modules archived"
+    },
+    "7.8.0": {
+      "added": [
+        "ARCHITECTURE-development.md.template",
+        "ARCHITECTURE-security.md.template",
+        "ARCHITECTURE-devops.md.template",
+        "ARCHITECTURE-dfir.md.template",
+        "ARCHITECTURE-research.md.template",
+        "ARCHITECTURE-network.md.template",
+        "ARCHITECTURE-business.md.template",
+        "ARCHITECTURE-compliance.md.template",
+        "ARCHITECTURE-osint.md.template",
+        "ARCHITECTURE-chat.md.template"
+      ],
+      "changed": ["ARCHITECTURE.md.template", "ONBOARDING.md", "PERMISSIONS.md"],
+      "notes": "ARCHITECTURE templates (10 types), permissions 5->12, workflows, FILEMAP hook"
+    },
+    "9.0.0": {
+      "added": [],
+      "changed": ["MEMORY_INIT.md.template", "settings.local.json.template"],
+      "notes": "Architecture Redesign Path C. Output Style PRIMARY. CLAUDE.md <80 lines. CORE_INSTRUCTIONS 27 lines. Rules 9->14."
+    },
+    "9.1.0": {
+      "added": [],
+      "changed": ["gitignore.template"],
+      "notes": "Domain prompts overhaul 19->12, usage_dashboard, Windows porting v2, install.ps1, setup-vscodium.sh"
+    }
+  }
+}

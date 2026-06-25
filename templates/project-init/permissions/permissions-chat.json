@@ -1,0 +1,11 @@
+{
+  "type": "chat",
+  "description": "Chat, reference, and quick consultation projects. Minimal permissions, mostly read-only.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)"
+  ],
+  "ask": [],
+  "deny": [],
+  "mcp_profiles": []
+}

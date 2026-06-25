@@ -1,0 +1,31 @@
+# Claude Evaluation Framework Requirements
+# Python 3.11+ required
+
+# Core Anthropic SDK
+anthropic>=0.18.0
+
+# Data Analysis & Statistics
+pandas>=2.1.0
+numpy>=1.26.0
+scipy>=1.11.0
+
+# Testing Framework
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Configuration
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# HTTP & API
+requests>=2.31.0
+httpx>=0.25.0
+
+# Utilities
+tabulate>=0.9.0
+colorama>=0.4.6
+tqdm>=4.66.0
+
+# Optional: Notifications
+# python-telegram-bot>=20.0  # Uncomment if using Telegram
+# sendgrid>=6.11.0           # Uncomment if using email

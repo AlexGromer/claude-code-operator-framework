@@ -1,0 +1,93 @@
+<!-- ARCHITECTURE Extension: security / pentest-engagement -->
+<!-- Appended to base ARCHITECTURE.md for security/pentest projects -->
+
+## 7. Engagement Scope
+
+### Targets
+| Target | Type | IP/URL | Status | Notes |
+|--------|------|--------|--------|-------|
+<!-- | Web App | External | https://target.com | In scope | Production | -->
+<!-- | API | External | api.target.com | In scope | v2 only | -->
+<!-- | Internal Net | Internal | 10.0.0.0/24 | In scope | After VPN | -->
+
+### Boundaries
+- **In scope**: {{pentest_in_scope}}
+- **Out of scope**: {{pentest_out_of_scope}}
+- **Testing window**: {{testing_window}}
+- **Emergency contact**: {{emergency_contact}}
+
+### Rules of Engagement
+<!-- Agreed rules for testing -->
+| Rule | Details |
+|------|---------|
+<!-- | No DoS | Load testing limited to X rps | -->
+<!-- | No social engineering | Unless explicitly approved | -->
+<!-- | Working hours only | Mon-Fri 09:00-18:00 MSK | -->
+<!-- | Data handling | No exfiltration of real PII | -->
+
+## 8. Methodology
+
+### Framework
+<!-- PTES / OWASP Testing Guide / NIST SP 800-115 / Custom -->
+
+### Phases
+| Phase | Activities | Duration | Deliverable |
+|-------|-----------|----------|-------------|
+<!-- | 1. Recon | Passive OSINT, DNS, WHOIS | 1 day | Recon report | -->
+<!-- | 2. Scanning | Port scan, service enum | 1 day | Scan results | -->
+<!-- | 3. Enumeration | Directory brute, tech fingerprint | 1 day | Attack surface map | -->
+<!-- | 4. Exploitation | Vuln verification, PoC | 2 days | Findings | -->
+<!-- | 5. Post-exploitation | Privilege escalation, lateral | 1 day | Impact assessment | -->
+<!-- | 6. Reporting | Final report, remediation | 1 day | Pentest report | -->
+
+## 9. Toolchain
+
+| Category | Tools | Purpose |
+|----------|-------|---------|
+<!-- | Recon | subfinder, amass, httpx | Subdomain enumeration | -->
+<!-- | Scanning | nmap, nuclei, nikto | Port + vuln scanning | -->
+<!-- | Web | Burp Suite, ffuf, sqlmap | Web app testing | -->
+<!-- | Exploitation | Metasploit, Sliver | Exploitation framework | -->
+<!-- | Post-exploit | BloodHound, Mimikatz | AD enumeration | -->
+
+## 10. Attack Surface Map
+
+### External Attack Surface
+<!-- Internet-facing assets, services, entry points -->
+
+### Internal Attack Surface
+<!-- Internal services, network segments, trust relationships -->
+
+### Authentication Points
+| Auth Point | Method | MFA | Lockout | Notes |
+|-----------|--------|-----|---------|-------|
+<!-- | Web login | OIDC | Yes | 5 attempts | Keycloak | -->
+<!-- | VPN | Certificate | No | — | OpenVPN | -->
+
+## 11. Findings & Reporting
+
+### Severity Classification
+| Severity | CVSS Range | SLA | Example |
+|----------|-----------|-----|---------|
+| Critical | 9.0-10.0 | 24h notification | RCE, auth bypass |
+| High | 7.0-8.9 | In report | SQLi, privilege escalation |
+| Medium | 4.0-6.9 | In report | XSS, IDOR |
+| Low | 0.1-3.9 | In report | Info disclosure |
+| Informational | 0.0 | Appendix | Best practice |
+
+### Report Structure
+1. Executive Summary
+2. Scope & Methodology
+3. Findings (by severity)
+4. Risk Assessment
+5. Remediation Recommendations
+6. Appendices (raw output, evidence)
+
+## 12. Evidence & Chain of Custody
+
+| Evidence ID | Date | Source | Description | Hash (SHA256) |
+|------------|------|--------|-------------|---------------|
+<!-- | EVD-001 | 2026-01-15 | nmap scan | Full port scan results | abc123... | -->
+
+### Storage
+<!-- Where evidence is stored, retention policy, access control -->

@@ -1,0 +1,186 @@
+# Claude Evaluation Framework Configuration
+# Version: 1.0.0
+# Smart defaults - works out of box, customize as needed
+
+# ============================================================================
+# EVALUATION SETTINGS
+# ============================================================================
+evaluation:
+  # Metrics collection
+  metrics:
+    enabled: true                    # Enable automatic metrics collection
+    collection: automatic            # automatic | manual
+    storage_path: ~/.claude/evaluation/data/metrics.jsonl
+
+  # Reporting configuration
+  reporting:
+    schedule: manual                 # manual | weekly | daily | on-commit
+    format: markdown                 # markdown | json | html
+    output_path: ~/.claude/evaluation/reports/
+    weekly_day: monday               # Day for weekly reports
+    weekly_time: "09:00"             # Time for weekly reports (HH:MM)
+
+  # Test cases
+  test_cases:
+    baseline_path: ~/.claude/evaluation/test_cases.json
+    min_coverage: 95                 # Minimum test coverage percentage
+
+  # Regression detection
+  regression:
+    enabled: true
+    threshold_accuracy: 0.05         # 5% degradation triggers alert
+    threshold_hallucination: 0.03    # 3% increase triggers alert
+    threshold_tool_errors: 0.10      # 10% increase triggers alert
+
+  # A/B testing
+  ab_testing:
+    enabled: false                   # Enable for comparing prompt strategies
+    sample_size: 30                  # Minimum samples per variant
+    confidence_level: 0.95           # 95% confidence interval
+
+# ============================================================================
+# FEW-SHOT EXAMPLES
+# ============================================================================
+few_shot:
+  mode: manual                       # manual | assisted | semi-automated
+  library_path: ~/.claude/examples/
+
+  # Automatic loading by domain
+  auto_load: true                    # Load examples based on task domain
+  max_examples_per_domain: 3         # Max examples to load per task
+
+  # Example curation (Phase 3 feature)
+  curation:
+    enabled: false                   # Enable assisted curation
+    min_corrections: 3               # Corrections needed before suggesting example
+    auto_suggest: false              # Automatically suggest new examples
+
+# ============================================================================
+# CUSTOM TOOLS
+# ============================================================================
+tools:
+  custom_tools_enabled: true
+  tools_path: ~/.claude/tools/
+
+  # MCP Server (optional)
+  mcp_enabled: false                 # Enable MCP server for structured tools
+  mcp_server_path: ~/.claude/tools/mcp_server.py
+  mcp_port: 8765
+
+  # Tool permissions (enforce in settings.json)
+  security_tools_require_confirmation: true
+  destructive_tools_require_explicit: true
+
+# ============================================================================
+# AUTOMATION
+# ============================================================================
+automation:
+  # Backend selection
+  backend: none                      # none | cron | systemd | launchd | manual
+
+  # Hooks
+  hooks:
+    enabled: false
+    after_tool_use: ~/.claude/evaluation/hooks/log_tool_use.py
+    pre_commit: ~/.claude/evaluation/hooks/pre_commit_check.sh
+
+  # Cron settings (if backend: cron)
+  cron:
+    weekly_report: "0 9 * * 1"       # Every Monday at 9:00
+    monthly_summary: "0 10 1 * *"    # First day of month at 10:00
+
+  # Systemd settings (if backend: systemd)
+  systemd:
+    timer_weekly: "Mon *-*-* 09:00:00"
+    timer_monthly: "*-*-01 10:00:00"
+
+# ============================================================================
+# NOTIFICATIONS
+# ============================================================================
+notifications:
+  enabled: false                     # Enable notifications
+
+  # Notification backends
+  desktop:
+    enabled: false                   # Desktop notifications (notify-send)
+
+  telegram:
+    enabled: false
+    bot_token_env: TELEGRAM_BOT_TOKEN  # Environment variable name
+    chat_id_env: TELEGRAM_CHAT_ID
+
+  email:
+    enabled: false
+    smtp_host: localhost
+    smtp_port: 25
+    from_address: claude@localhost
+    to_address: user@localhost
+
+  # Notification triggers
+  triggers:
+    on_weekly_report: true
+    on_regression_detected: true
+    on_threshold_exceeded: true
+
+# ============================================================================
+# SECURITY & COMPLIANCE
+# ============================================================================
+security:
+  # Pre-commit checks
+  pre_commit_checks:
+    secrets_detection: true          # Run gitleaks/trufflehog
+    gitignore_verification: true     # Verify sensitive files ignored
+
+  # Audit logging
+  audit_logging:
+    enabled: true
+    log_path: ~/.claude/evaluation/audit.log
+    log_level: INFO                  # DEBUG | INFO | WARNING | ERROR
+
+  # Data retention (GDPR/HIPAA compliance)
+  data_retention:
+    metrics_days: 365                # Keep metrics for 1 year
+    logs_days: 90                    # Keep logs for 90 days
+    reports_days: 730                # Keep reports for 2 years
+
+# ============================================================================
+# ADVANCED SETTINGS
+# ============================================================================
+advanced:
+  # Performance
+  async_enabled: true                # Use async API calls
+  max_concurrent_requests: 5
+
+  # Caching
+  cache_enabled: true
+  cache_ttl: 300                     # Cache TTL in seconds
+
+  # Debugging
+  debug_mode: false
+  verbose_logging: false
+
+  # API settings
+  api_timeout: 60                    # API timeout in seconds
+  max_retries: 3
+  retry_delay: 1                     # Seconds between retries
+
+# ============================================================================
+# EXPERIMENTAL FEATURES (Phase 4)
+# ============================================================================
+experimental:
+  # ExampleLearner (semi-automated few-shot curation)
+  example_learner:
+    enabled: false
+    clustering_algorithm: kmeans     # kmeans | dbscan
+    min_cluster_size: 3
+
+  # Dashboard UI
+  dashboard:
+    enabled: false
+    port: 8080
+    host: localhost
+
+  # Go MCP server (high-performance alternative)
+  go_mcp_server:
+    enabled: false
+    binary_path: ~/.claude/tools/mcp-server-go

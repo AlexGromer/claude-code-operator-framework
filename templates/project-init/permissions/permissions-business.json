@@ -1,0 +1,14 @@
+{
+  "type": "business",
+  "description": "Business analysis and management projects. Read/write access with web research capabilities.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)",
+    "WebFetch(domain:docs.google.com)",
+    "WebFetch(domain:habr.com)",
+    "WebFetch(domain:vc.ru)"
+  ],
+  "ask": [],
+  "deny": [],
+  "mcp_profiles": ["github"]
+}

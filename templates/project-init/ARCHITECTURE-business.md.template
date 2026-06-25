@@ -1,0 +1,78 @@
+<!-- ARCHITECTURE Extension: business -->
+<!-- Appended to base ARCHITECTURE.md for business analysis/management projects -->
+
+## 7. Business Model
+
+### Value Proposition
+<!-- What value does this business/project deliver? To whom? -->
+
+### Revenue Model
+| Stream | Type | Unit | Price | Volume |
+|--------|------|------|-------|--------|
+<!-- | SaaS subscription | Recurring | User/month | $49 | 1000 | -->
+<!-- | Professional services | One-time | Project | $5000 | 20/year | -->
+
+### Key Metrics
+| Metric | Current | Target | Timeline |
+|--------|---------|--------|----------|
+<!-- | MRR | $10K | $50K | Q4 2026 | -->
+<!-- | CAC | $200 | $150 | Q3 2026 | -->
+<!-- | LTV | $1200 | $1800 | Q4 2026 | -->
+<!-- | Churn | 5% | 3% | Q3 2026 | -->
+
+## 8. Stakeholders
+
+| Stakeholder | Role | Interest | Influence | Communication |
+|-------------|------|----------|-----------|---------------|
+<!-- | CEO | Sponsor | Strategic direction | High | Weekly report | -->
+<!-- | Product Manager | Owner | Feature delivery | High | Daily standup | -->
+<!-- | End Users | Consumer | Usability, value | Medium | Quarterly survey | -->
+<!-- | Investors | Funder | ROI, growth | High | Monthly board | -->
+
+### RACI Matrix
+| Decision | Responsible | Accountable | Consulted | Informed |
+|----------|------------|-------------|-----------|----------|
+<!-- | Feature priority | PM | CEO | Dev Lead, UX | Team | -->
+
+## 9. Processes (AS-IS / TO-BE)
+
+### AS-IS Process Map
+<!-- Current state of key business processes -->
+<!-- Use BPMN notation or simple flowcharts -->
+
+### TO-BE Process Map
+<!-- Target state after improvements -->
+
+### Gap Analysis
+| Process | AS-IS | TO-BE | Gap | Priority | Effort |
+|---------|-------|-------|-----|----------|--------|
+<!-- | Customer onboarding | Manual, 3 days | Automated, 1 hour | Automation | High | Medium | -->
+
+## 10. KPI / Metrics Dashboard
+
+### Strategic KPIs
+| KPI | Owner | Frequency | Source | Target | Alert |
+|-----|-------|-----------|--------|--------|-------|
+<!-- | Revenue | CFO | Monthly | Stripe | $50K MRR | <$40K | -->
+<!-- | NPS | Product | Quarterly | Survey | >50 | <30 | -->
+
+### Operational Metrics
+| Metric | Owner | Frequency | Current | Target |
+|--------|-------|-----------|---------|--------|
+<!-- | Avg response time | Support | Daily | 4h | 1h | -->
+<!-- | Deployment frequency | DevOps | Weekly | 2/week | Daily | -->
+
+## 11. Decision Log
+
+<!-- Business decisions (complementing ADR for technical decisions) -->
+| ID | Date | Decision | Rationale | Impact | Owner |
+|----|------|----------|-----------|--------|-------|
+<!-- | BD-001 | 2026-01-15 | Enter EU market | Revenue diversification | New compliance reqs | CEO | -->
+<!-- | BD-002 | 2026-02-01 | Hire 3 engineers | Capacity for roadmap | +$30K/mo costs | CTO | -->
+
+## 12. Compliance Requirements
+
+| Requirement | Standard | Scope | Status | Deadline |
+|-------------|----------|-------|--------|----------|
+<!-- | Personal data protection | ФЗ-152 | User data | In progress | Q2 2026 | -->
+<!-- | Payment processing | PCI DSS | Payments | Not started | Q3 2026 | -->

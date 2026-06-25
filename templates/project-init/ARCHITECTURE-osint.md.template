@@ -1,0 +1,107 @@
+<!-- ARCHITECTURE Extension: osint -->
+<!-- Appended to base ARCHITECTURE.md for OSINT investigation projects -->
+
+## 7. Target Types
+
+### Investigation Targets
+| ID | Target | Type | Priority | Status |
+|----|--------|------|----------|--------|
+<!-- | TGT-001 | example.com | Domain | High | Active | -->
+<!-- | TGT-002 | John Doe | Person | Medium | Active | -->
+<!-- | TGT-003 | Company Ltd | Organization | High | Active | -->
+
+### Target Relationships
+<!-- How targets relate to each other (org chart, domain ownership, etc.) -->
+
+## 8. Collection Sources
+
+### Source Matrix
+| Source | Type | Access | Reliability | Cost |
+|--------|------|--------|-------------|------|
+<!-- | WHOIS | Domain | Public | High | Free | -->
+<!-- | Shodan | Infrastructure | API key | High | $59/mo | -->
+<!-- | LinkedIn | SOCMINT | Manual | Medium | Free (limited) | -->
+<!-- | Certificate Transparency | Domain | Public | High | Free | -->
+<!-- | Leaked databases | DARKINT | Tor | Low-Medium | Free | -->
+
+### Collection Priority
+| Source Category | Priority | Legal Risk | Value |
+|----------------|----------|-----------|-------|
+| Public records (WHOIS, DNS, CT) | High | None | High |
+| Social media (public profiles) | Medium | Low | Medium |
+| Technical (Shodan, Censys) | High | None | High |
+| Dark web / leaks | Low | Medium | Variable |
+
+## 9. Methodology
+
+### Collection Workflow
+1. **Passive Recon**: DNS, WHOIS, CT logs, Google dorks
+2. **Social Media**: Profile enumeration, network mapping
+3. **Technical**: Shodan/Censys, port history, tech stack
+4. **Deep Dive**: Dark web monitoring, leaked credentials check
+5. **Analysis**: Correlation, timeline, attribution
+6. **Reporting**: Structured findings, IOCs, recommendations
+
+### OPSEC Measures
+<!-- How to maintain operational security during investigation -->
+| Measure | Implementation |
+|---------|---------------|
+<!-- | VPN/Tor | All active collection through VPN | -->
+<!-- | Sock puppets | Dedicated research accounts | -->
+<!-- | Browser isolation | Separate browser profile | -->
+
+## 10. Legal Basis
+
+### Authorization
+| Aspect | Details |
+|--------|---------|
+| Client | <!-- Who authorized this investigation --> |
+| Scope | <!-- What is authorized --> |
+| Legal basis | <!-- Contract, internal policy, law enforcement request --> |
+| Jurisdiction | <!-- Which laws apply --> |
+| Restrictions | <!-- What is NOT authorized --> |
+
+### Legal Compliance
+<!-- ФЗ-152 (personal data), GDPR (if EU targets), CFAA (if US targets) -->
+
+## 11. Tools
+
+### Tool Stack
+| Category | Tool | Purpose | Output |
+|----------|------|---------|--------|
+<!-- | Domain | subfinder, amass | Subdomain enumeration | Subdomain list | -->
+<!-- | DNS | dnsx, dig | DNS resolution | IP mapping | -->
+<!-- | Web | httpx, katana | HTTP probing + crawling | Tech stack, URLs | -->
+<!-- | Person | sherlock, maigret | Username enumeration | Profile links | -->
+<!-- | Email | holehe, h8mail | Email investigation | Account existence | -->
+<!-- | Network | shodan, censys | Infrastructure recon | Open ports, services | -->
+
+### Data Storage
+<!-- Where raw collection data is stored -->
+```
+{{project_path}}/
+├── raw/           # Raw tool output
+├── processed/     # Cleaned/normalized data
+├── analysis/      # Correlation and analysis
+├── reports/       # Final reports
+└── evidence/      # Screenshots, archives
+```
+
+## 12. Reporting Format
+
+### Report Structure
+1. Executive Summary (for non-technical audience)
+2. Target Overview
+3. Methodology
+4. Findings by Target
+5. Risk Assessment
+6. IOC List (for defensive use)
+7. Recommendations
+8. Appendices (raw data, tool output)
+
+### Classification
+| Level | Handling | Distribution |
+|-------|---------|-------------|
+| TLP:RED | Named recipients only | Client POC only |
+| TLP:AMBER | Organization only | Client org |
+| TLP:GREEN | Community | Security community |

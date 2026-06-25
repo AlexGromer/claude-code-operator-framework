@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": ["Bash(git:*)", "Bash(python:*)", "Bash(pip:*)", "Read", "Glob", "Grep"],
+    "deny": ["Bash(rm -rf *)"]
+  },
+  "env": {
+    "PROJECT_TYPE": "{{type}}",
+    "PROJECT_DOMAINS": "{{domains}}"
+  }
+}

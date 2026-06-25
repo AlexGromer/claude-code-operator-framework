@@ -1,0 +1,21 @@
+{
+  "type": "network",
+  "description": "Network infrastructure management. Read-only monitoring in allow, configuration changes in ask.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)",
+    "Bash(ping:*)",
+    "Bash(traceroute:*)",
+    "Bash(dig:*)",
+    "Bash(whois:*)",
+    "Bash(nslookup:*)"
+  ],
+  "ask": [
+    "Bash(ssh:*)",
+    "Bash(telnet:*)",
+    "Bash(snmpwalk:*)",
+    "Bash(snmpget:*)"
+  ],
+  "deny": [],
+  "mcp_profiles": ["network", "github"]
+}

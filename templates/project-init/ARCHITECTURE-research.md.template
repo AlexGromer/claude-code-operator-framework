@@ -1,0 +1,94 @@
+<!-- ARCHITECTURE Extension: research -->
+<!-- Appended to base ARCHITECTURE.md for research projects -->
+
+## 7. Research Questions
+
+### Primary Questions
+| ID | Question | Status | Method | Priority |
+|----|----------|--------|--------|----------|
+<!-- | RQ-1 | What is the state of X in domain Y? | Open | Literature review | High | -->
+<!-- | RQ-2 | How does A compare to B for task C? | Open | Empirical study | Medium | -->
+
+### Hypotheses
+| ID | Hypothesis | Related RQ | Evidence | Status |
+|----|-----------|-----------|----------|--------|
+<!-- | H-1 | X improves performance by >20% | RQ-2 | Pending experiment | Untested | -->
+
+## 8. Methodology
+
+### Research Design
+<!-- Qualitative / Quantitative / Mixed Methods -->
+<!-- Cross-sectional / Longitudinal / Case study / Experiment -->
+
+### Data Collection
+| Source | Method | Volume | Format | Access |
+|--------|--------|--------|--------|--------|
+<!-- | Academic papers | Systematic search | ~200 papers | PDF | Open access + uni library | -->
+<!-- | GitHub repos | API scraping | ~500 repos | JSON | Public | -->
+
+### Analysis Framework
+<!-- Statistical methods, qualitative coding, thematic analysis -->
+
+### Validity & Limitations
+<!-- Internal/external validity, known biases, scope limitations -->
+
+## 9. Sources & Collection Pipeline
+
+### Search Strategy
+| Database | Query | Filters | Expected Results |
+|----------|-------|---------|-----------------|
+<!-- | Google Scholar | "topic" AND "keyword" | 2020-2026, English | ~500 | -->
+<!-- | arXiv | cs.AI + "keyword" | Last 2 years | ~100 | -->
+<!-- | Scopus | TITLE-ABS-KEY(topic) | Journal articles | ~200 | -->
+
+### Source Quality Criteria
+| Criterion | Weight | Threshold |
+|-----------|--------|-----------|
+<!-- | Peer reviewed | 40% | Required for primary claims | -->
+<!-- | Citation count | 20% | >10 for established work | -->
+<!-- | Recency | 20% | Prefer last 3 years | -->
+<!-- | Relevance | 20% | Directly addresses RQ | -->
+
+### Collection Status
+| Source | Total Found | Screened | Included | Extracted |
+|--------|------------|----------|----------|-----------|
+<!-- | Google Scholar | 500 | 120 | 45 | 30 | -->
+
+## 10. Analysis Framework
+
+### Coding Scheme
+<!-- For qualitative: codes, categories, themes -->
+<!-- For quantitative: variables, measures, statistical tests -->
+
+### Tools
+| Tool | Purpose | Data |
+|------|---------|------|
+<!-- | Zotero | Reference management | All papers | -->
+<!-- | Atlas.ti / NVivo | Qualitative coding | Interview transcripts | -->
+<!-- | Python + Pandas | Statistical analysis | Experiment data | -->
+<!-- | matplotlib / plotly | Visualization | All quantitative | -->
+
+## 11. Output Format
+
+### Deliverables
+| Deliverable | Format | Audience | Deadline |
+|-------------|--------|----------|----------|
+<!-- | Literature review | Markdown / LaTeX | Advisor | Week 4 | -->
+<!-- | Data analysis report | Jupyter notebook | Team | Week 8 | -->
+<!-- | Final paper | LaTeX (IEEE format) | Conference | Week 12 | -->
+<!-- | Presentation | Slides (reveal.js) | Defense committee | Week 14 | -->
+
+### Writing Standards
+<!-- Style guide (APA, IEEE, ГОСТ), citation format, language -->
+
+## 12. Citation Policy
+
+### Citation Format
+<!-- APA 7th / IEEE / ГОСТ Р 7.0.5-2008 / Harvard -->
+
+### Reference Management
+<!-- Tool: Zotero / Mendeley / BibTeX -->
+<!-- Shared library location, naming conventions -->
+
+### Ethical Considerations
+<!-- IRB approval, data anonymization, consent forms -->

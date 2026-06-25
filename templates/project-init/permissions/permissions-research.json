@@ -1,0 +1,18 @@
+{
+  "type": "research",
+  "description": "Research and analysis projects. Read-heavy with approved web domains. Minimal ask requirements.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)",
+    "WebFetch(domain:arxiv.org)",
+    "WebFetch(domain:github.com)",
+    "WebFetch(domain:habr.com)",
+    "WebFetch(domain:stackoverflow.com)",
+    "WebFetch(domain:docs.python.org)"
+  ],
+  "ask": [],
+  "deny": [],
+  "mcp_profiles": [
+    "github"
+  ]
+}

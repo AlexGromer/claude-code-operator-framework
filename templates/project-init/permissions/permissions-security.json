@@ -1,0 +1,37 @@
+{
+  "type": "security",
+  "description": "Security testing and penetration testing engagements. Passive recon in allow, active scanning tools in ask.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)",
+    "Bash(whois:*)",
+    "Bash(dig:*)",
+    "Bash(curl:-s*)",
+    "Bash(host:*)",
+    "Bash(nslookup:*)"
+  ],
+  "ask": [
+    "Bash(nmap:*)",
+    "Bash(nuclei:*)",
+    "Bash(subfinder:*)",
+    "Bash(httpx:*)",
+    "Bash(ffuf:*)",
+    "Bash(sqlmap:*)",
+    "Bash(hydra:*)",
+    "Bash(nikto:*)",
+    "Bash(gobuster:*)",
+    "Bash(masscan:*)",
+    "mcp__pd-tools__subfinder",
+    "mcp__pd-tools__dnsx",
+    "mcp__pd-tools__naabu",
+    "mcp__pd-tools__httpx",
+    "mcp__pd-tools__katana",
+    "mcp__pd-tools__nuclei",
+    "mcp__pd-tools__bug_bounty_workflow"
+  ],
+  "deny": [],
+  "mcp_profiles": [
+    "security",
+    "github"
+  ]
+}

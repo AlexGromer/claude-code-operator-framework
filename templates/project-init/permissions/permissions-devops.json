@@ -1,0 +1,34 @@
+{
+  "type": "devops",
+  "description": "DevOps and infrastructure projects. Read-only k8s/helm/terraform in allow, mutating operations in ask.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)",
+    "Bash(kubectl:get*)",
+    "Bash(kubectl:describe*)",
+    "Bash(kubectl:logs*)",
+    "Bash(helm:list*)",
+    "Bash(helm:status*)",
+    "Bash(helm:get*)",
+    "Bash(terraform:plan*)",
+    "Bash(terraform:show*)",
+    "Bash(terraform:validate*)",
+    "Bash(ansible-lint:*)"
+  ],
+  "ask": [
+    "Bash(kubectl:apply*)",
+    "Bash(kubectl:delete*)",
+    "Bash(kubectl:exec*)",
+    "Bash(helm:install*)",
+    "Bash(helm:upgrade*)",
+    "Bash(helm:rollback*)",
+    "Bash(terraform:apply*)",
+    "Bash(terraform:destroy*)",
+    "Bash(ansible-playbook:*)"
+  ],
+  "deny": [],
+  "mcp_profiles": [
+    "devops",
+    "github"
+  ]
+}

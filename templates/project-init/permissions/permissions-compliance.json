@@ -1,0 +1,15 @@
+{
+  "type": "compliance",
+  "description": "Compliance audit and regulatory projects. Read-heavy, document generation focused.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)",
+    "WebFetch(domain:consultant.ru)",
+    "WebFetch(domain:fstec.ru)",
+    "WebFetch(domain:cbr.ru)",
+    "WebFetch(domain:iso.org)"
+  ],
+  "ask": [],
+  "deny": [],
+  "mcp_profiles": ["github"]
+}

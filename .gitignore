@@ -1,0 +1,76 @@
+# СЕКРЕТЫ
+git_credentials
+git_config.json
+*.env
+.env.*
+**/secrets.*
+**/*password*
+**/*secret*
+**/*token*
+**/*apikey*
+**/*.key
+**/*.pem
+.secret_method
+.git_auth_methods
+
+# GitHub App (разрешить шаблоны, запретить приватные ключи)
+.github-app/*.pem
+.github-app/*.key
+.github-app/private-key*
+.github-app/app-token*
+
+# ЛОГИ
+logs/
+*.log
+
+# БЭКАПЫ
+*.backup*
+*.bak
+*.old
+
+# USER-SPECIFIC (локальные skills не в репозиторий)
+skills/
+
+# PYTHON
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# EVALUATION RESULTS (данные, не код)
+evaluation/results/
+evaluation/reports/
+evaluation/data/
+evaluation/*.db
+evaluation/*.sqlite
+evaluation/*.csv
+evaluation/.session_health_last_warning
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.swp
+*.swo
+
+# TEMP
+*.tmp
+*.temp
+.cache/
+paste-cache/
+session-env/
+file-history/
+shell-snapshots/
+downloads/
+debug/

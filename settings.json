@@ -1,0 +1,830 @@
+{
+  "cleanupPeriodDays": 3650,
+  "env": {
+    "ANTHROPIC_MODEL": "claude-opus-4-8[1m]",
+    "API_TIMEOUT_MS": "600000",
+    "BASH_DEFAULT_TIMEOUT_MS": "300000",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
+    "SLASH_COMMAND_TOOL_CHAR_BUDGET": "8000"
+  },
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Grep(*)",
+      "Glob(*)",
+      "WebSearch",
+      "Edit(/opt/work/osint/**)",
+      "Edit(/opt/work/pentest/**)",
+      "Edit(/opt/work/devops/**)",
+      "Edit(/opt/work/reverse/**)",
+      "Edit(/opt/project/**)",
+      "Edit(/opt/work/dfir/**)",
+      "Edit(/opt/work/ml/**)",
+      "Edit(/opt/work/compliance/**)",
+      "Edit(/opt/work/business/**)",
+      "Edit(/opt/go/**)",
+      "Edit(/opt/cargo/**)",
+      "Edit(/opt/templates/**)",
+      "Edit(/opt/agent_work_directory/**)",
+      "Edit(/opt/rustup/**)",
+      "Edit(/opt/uv-cache/**)",
+      "Edit(/opt/uv-tools/**)",
+      "Write(/opt/work/osint/**)",
+      "Write(/opt/work/pentest/**)",
+      "Write(/opt/work/devops/**)",
+      "Write(/opt/work/reverse/**)",
+      "Write(/opt/project/**)",
+      "Write(/opt/work/dfir/**)",
+      "Write(/opt/work/ml/**)",
+      "Write(/opt/work/compliance/**)",
+      "Write(/opt/work/business/**)",
+      "Write(/opt/go/**)",
+      "Write(/opt/cargo/**)",
+      "Write(/opt/templates/**)",
+      "Write(/opt/agent_work_directory/**)",
+      "Write(/opt/rustup/**)",
+      "Write(/opt/uv-cache/**)",
+      "Write(/opt/uv-tools/**)",
+      "Edit(/home/user/.claude/**)",
+      "Write(/home/user/.claude/**)",
+      "mcp__github__add_issue_comment",
+      "mcp__github__create_branch",
+      "mcp__github__create_issue",
+      "mcp__github__create_or_update_file",
+      "mcp__github__create_pull_request",
+      "mcp__github__create_pull_request_review",
+      "mcp__github__create_repository",
+      "mcp__github__fork_repository",
+      "mcp__github__get_file_contents",
+      "mcp__github__get_issue",
+      "mcp__github__get_pull_request",
+      "mcp__github__get_pull_request_comments",
+      "mcp__github__get_pull_request_files",
+      "mcp__github__get_pull_request_reviews",
+      "mcp__github__get_pull_request_status",
+      "mcp__github__list_commits",
+      "mcp__github__list_issues",
+      "mcp__github__list_pull_requests",
+      "mcp__github__merge_pull_request",
+      "mcp__github__push_files",
+      "mcp__github__search_code",
+      "mcp__github__search_issues",
+      "mcp__github__search_repositories",
+      "mcp__github__search_users",
+      "mcp__github__update_issue",
+      "mcp__github__update_pull_request_branch",
+      "mcp__fetch__fetch",
+      "mcp__filesystem__create_directory",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__edit_file",
+      "mcp__filesystem__get_file_info",
+      "mcp__filesystem__list_allowed_directories",
+      "mcp__filesystem__list_directory",
+      "mcp__filesystem__list_directory_with_sizes",
+      "mcp__filesystem__move_file",
+      "mcp__filesystem__read_file",
+      "mcp__filesystem__read_media_file",
+      "mcp__filesystem__read_multiple_files",
+      "mcp__filesystem__read_text_file",
+      "mcp__filesystem__search_files",
+      "mcp__filesystem__write_file",
+      "mcp__memory__add_observations",
+      "mcp__memory__create_entities",
+      "mcp__memory__create_relations",
+      "mcp__memory__delete_entities",
+      "mcp__memory__delete_observations",
+      "mcp__memory__delete_relations",
+      "mcp__memory__open_nodes",
+      "mcp__memory__read_graph",
+      "mcp__memory__search_nodes",
+      "mcp__git__git_add",
+      "mcp__git__git_branch",
+      "mcp__git__git_checkout",
+      "mcp__git__git_commit",
+      "mcp__git__git_create_branch",
+      "mcp__git__git_diff",
+      "mcp__git__git_diff_staged",
+      "mcp__git__git_diff_unstaged",
+      "mcp__git__git_log",
+      "mcp__git__git_show",
+      "mcp__git__git_status",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__sqlite__append_insight",
+      "mcp__sqlite__create_table",
+      "mcp__sqlite__describe_table",
+      "mcp__sqlite__list_tables",
+      "mcp__sqlite__read_query",
+      "mcp__sqlite__write_query",
+      "mcp__backlog-mcp__backlog_add",
+      "mcp__backlog-mcp__backlog_complete",
+      "mcp__backlog-mcp__backlog_delete",
+      "mcp__backlog-mcp__backlog_list",
+      "mcp__backlog-mcp__backlog_rotate",
+      "mcp__backlog-mcp__backlog_stale",
+      "mcp__backlog-mcp__backlog_stats",
+      "mcp__backlog-mcp__backlog_update",
+      "mcp__terraform__get_latest_module_version",
+      "mcp__terraform__get_latest_provider_version",
+      "mcp__terraform__get_module_details",
+      "mcp__terraform__get_policy_details",
+      "mcp__terraform__get_provider_capabilities",
+      "mcp__terraform__get_provider_details",
+      "mcp__terraform__search_modules",
+      "mcp__terraform__search_policies",
+      "mcp__terraform__search_providers",
+      "mcp__claude_ai_Crypto_com__get_book",
+      "mcp__claude_ai_Crypto_com__get_candlestick",
+      "mcp__claude_ai_Crypto_com__get_index_price",
+      "mcp__claude_ai_Crypto_com__get_instrument",
+      "mcp__claude_ai_Crypto_com__get_instruments",
+      "mcp__claude_ai_Crypto_com__get_mark_price",
+      "mcp__claude_ai_Crypto_com__get_ticker",
+      "mcp__claude_ai_Crypto_com__get_tickers",
+      "mcp__claude_ai_Crypto_com__get_trades",
+      "mcp__claude_ai_GoDaddy__domains_check_availability",
+      "mcp__claude_ai_GoDaddy__domains_suggest",
+      "mcp__profile-mcp__profile_ensure_essential",
+      "mcp__profile-mcp__profile_list",
+      "mcp__profile-mcp__profile_load",
+      "mcp__profile-mcp__profile_load_all",
+      "mcp__profile-mcp__profile_reset",
+      "mcp__profile-mcp__profile_show",
+      "mcp__profile-mcp__profile_status",
+      "mcp__profile-mcp__profile_unload",
+      "mcp__doctor-mcp__doctor_check",
+      "mcp__doctor-mcp__doctor_full",
+      "mcp__doctor-mcp__doctor_json",
+      "mcp__gc-mcp__gc_dry_run",
+      "mcp__gc-mcp__gc_run",
+      "mcp__gc-mcp__gc_status",
+      "mcp__score-mcp__score_batch",
+      "mcp__score-mcp__score_dimensions",
+      "mcp__score-mcp__score_discovery",
+      "mcp__tools-mcp__criteria_freeze",
+      "mcp__tools-mcp__criteria_unfreeze",
+      "mcp__tools-mcp__criteria_check",
+      "mcp__tools-mcp__criteria_list",
+      "mcp__tools-mcp__session_start",
+      "mcp__tools-mcp__session_end",
+      "mcp__tools-mcp__session_status",
+      "mcp__tools-mcp__session_list",
+      "mcp__tools-mcp__session_cleanup",
+      "mcp__tools-mcp__usage_record",
+      "mcp__tools-mcp__usage_report",
+      "mcp__tools-mcp__usage_top_tools",
+      "mcp__tools-mcp__usage_trends",
+      "mcp__tools-mcp__scope_track",
+      "mcp__tools-mcp__scope_status",
+      "Bash(git:status*)",
+      "Bash(git:log*)",
+      "Bash(git:diff*)",
+      "Bash(git:branch*)",
+      "Bash(git:show*)",
+      "Bash(git:stash*)",
+      "Bash(git:fetch*)",
+      "Bash(git:remote*)",
+      "Bash(git:add*)",
+      "Bash(git:commit*)",
+      "Bash(git:tag*)",
+      "Bash(git:rev-parse*)",
+      "Bash(git:ls-files*)",
+      "Bash(git:blame*)",
+      "Bash(git:shortlog*)",
+      "Bash(git:describe*)",
+      "Bash(git:config --get*)",
+      "Bash(git:worktree*)",
+      "Bash(gitleaks detect:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pip:list*)",
+      "Bash(pip:show*)",
+      "Bash(pip:freeze*)",
+      "Bash(pip:check*)",
+      "Bash(pip:download*)",
+      "Bash(pip:search*)",
+      "Bash(pip3:list*)",
+      "Bash(pip3:show*)",
+      "Bash(pip3:freeze*)",
+      "Bash(pip3:check*)",
+      "Bash(pip3:download*)",
+      "Bash(pip3:search*)",
+      "Bash(pytest:*)",
+      "Bash(go:*)",
+      "Bash(gofmt:*)",
+      "Bash(golangci-lint run:*)",
+      "Bash(make:*)",
+      "Bash(cmake:*)",
+      "Bash(bash:*)",
+      "Bash(sh:*)",
+      "Bash(zsh:*)",
+      "Bash(jq:*)",
+      "Bash(yq:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(awk:*)",
+      "Bash(sed:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(cut:*)",
+      "Bash(tr:*)",
+      "Bash(file:*)",
+      "Bash(stat:*)",
+      "Bash(du:*)",
+      "Bash(tree:*)",
+      "Bash(column:*)",
+      "Bash(comm:*)",
+      "Bash(strings:*)",
+      "Bash(xxd:*)",
+      "Bash(hexdump:*)",
+      "Bash(objdump:*)",
+      "Bash(readelf:*)",
+      "Bash(nm:*)",
+      "Bash(ldd:*)",
+      "Bash(whois:*)",
+      "Bash(dig:*)",
+      "Bash(host:*)",
+      "Bash(nslookup:*)",
+      "Bash(ping:*)",
+      "Bash(traceroute:*)",
+      "Bash(curl:-s*)",
+      "Bash(wget:-q*)",
+      "Bash(dnsx:*)",
+      "Bash(docker:ps*)",
+      "Bash(docker:images*)",
+      "Bash(docker:logs*)",
+      "Bash(docker:inspect*)",
+      "Bash(docker-compose:ps*)",
+      "Bash(docker-compose:logs*)",
+      "Bash(kubectl:get*)",
+      "Bash(kubectl:describe*)",
+      "Bash(kubectl:logs*)",
+      "Bash(helm:list*)",
+      "Bash(helm:status*)",
+      "Bash(helm:get*)",
+      "Bash(helm:show*)",
+      "Bash(helm:search*)",
+      "Bash(helm:repo list*)",
+      "Bash(helm:template*)",
+      "Bash(helm:lint*)",
+      "Bash(helm:verify*)",
+      "Bash(helm:version*)",
+      "Bash(helm:history*)",
+      "Bash(helm:diff*)",
+      "Bash(helm:dependency list*)",
+      "Bash(helm:env*)",
+      "Bash(helmfile:diff*)",
+      "Bash(helmfile:list*)",
+      "Bash(helmfile:status*)",
+      "Bash(helmfile:template*)",
+      "Bash(helmfile:lint*)",
+      "Bash(helmfile:fetch*)",
+      "Bash(helmfile:repos*)",
+      "Bash(helmfile:version*)",
+      "Bash(terraform:plan*)",
+      "Bash(terraform:show*)",
+      "Bash(terraform:state*)",
+      "Bash(terraform:output*)",
+      "Bash(terraform:validate*)",
+      "Bash(terraform:fmt*)",
+      "Bash(ansible:--version*)",
+      "Bash(ansible-playbook:--check*)",
+      "Bash(ansible-lint:*)",
+      "Bash(k6:*)",
+      "Bash(locust:*)",
+      "Bash(artillery:*)",
+      "Bash(wrk:*)",
+      "Bash(vegeta:*)",
+      "Bash(hey:*)",
+      "Bash(ab:*)",
+      "Bash(mutmut:results*)",
+      "Bash(mutmut:show*)",
+      "Bash(mutmut:html*)",
+      "Bash(pact-verifier:*)",
+      "Bash(dredd:*)",
+      "Bash(schemathesis:*)",
+      "Bash(stress-ng:--version*)",
+      "Bash(litmusctl:get*)",
+      "Bash(toxiproxy-cli:list*)",
+      "Bash(echo:*)",
+      "Bash(env:*)",
+      "Bash(export:*)",
+      "Bash(command:*)",
+      "Bash(test:*)",
+      "Bash(seq:*)",
+      "Bash(tee:*)",
+      "Bash(xargs:*)",
+      "Bash(printf:*)",
+      "Bash(bc:*)",
+      "Bash(time:*)",
+      "Bash(source:*)",
+      "Bash(apt list:*)",
+      "Bash(apt-cache policy:*)",
+      "Bash(apt-cache search:*)",
+      "Bash(apt-cache show:*)",
+      "Bash(dpkg:*)",
+      "Bash(uv tool list:*)",
+      "Bash(uvx:*)",
+      "Bash(crontab:*)",
+      "Bash(anacron:*)",
+      "Bash(logrotate:*)",
+      "Bash(journalctl:*)",
+      "Bash(rsync:*)",
+      "Bash(gpg:*)",
+      "Bash(kill:*)",
+      "Bash(censys:*)",
+      "Bash(shodan:*)",
+      "Bash(greynoise:*)",
+      "Bash(katana:*)",
+      "Bash(phoneinfoga:*)",
+      "Bash(tor:*)",
+      "Bash(claude doctor:*)",
+      "Bash(claude /doctor:*)",
+      "Bash(claude mcp:*)",
+      "WebFetch(domain:alignment.anthropic.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:assets.anthropic.com)",
+      "WebFetch(domain:atlas.mitre.org)",
+      "WebFetch(domain:cheatsheetseries.owasp.org)",
+      "WebFetch(domain:claude.com)",
+      "WebFetch(domain:claudelog.com)",
+      "WebFetch(domain:dave.engineer)",
+      "WebFetch(domain:example.com)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:docs.censys.com)",
+      "WebFetch(domain:genai.owasp.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:habr.com)",
+      "WebFetch(domain:learnprompting.org)",
+      "WebFetch(domain:example.com)",
+      "WebFetch(domain:mcp-awesome.com)",
+      "WebFetch(domain:openai.com)",
+      "WebFetch(domain:pkg.kali.org)",
+      "WebFetch(domain:platform.censys.io)",
+      "WebFetch(domain:pypi.org)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:registry.modelcontextprotocol.io)",
+      "WebFetch(domain:sanderschulhoff.com)",
+      "WebFetch(domain:thezvi.substack.com)",
+      "WebFetch(domain:tools.kali.org)",
+      "WebFetch(domain:example.com)",
+      "WebFetch(domain:example.com)",
+      "WebFetch(domain:www.anthropic.com)",
+      "WebFetch(domain:www.giskard.ai)",
+      "WebFetch(domain:www.indusface.com)",
+      "WebFetch(domain:www.kali.org)",
+      "WebFetch(domain:www.lakera.ai)",
+      "WebFetch(domain:www.nightfall.ai)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:www.practical-devsecops.com)",
+      "WebFetch(domain:www.promptfoo.dev)",
+      "WebFetch(domain:www.prompthub.us)",
+      "WebFetch(domain:www.stackhawk.com)"
+    ],
+    "deny": [
+      "Read(/etc/shadow)",
+      "Read(/etc/master.passwd)",
+      "Read(~/.ssh/id_*)",
+      "Read(~/.gnupg/*)",
+      "Read(~/.aws/credentials)",
+      "Read(~/.kube/config)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/secrets.*)",
+      "Read(**/*token*)",
+      "Read(**/*apikey*)",
+      "Read(**/*password*)",
+      "Read(**/*secret*)",
+      "Bash(git:push --force*)",
+      "Bash(git:push -f *)",
+      "Bash(rm:-rf /)",
+      "Bash(rm:-rf /*)",
+      "Bash(rm:-rf ~/*)",
+      "Bash(dd:if=/dev/zero*)",
+      "Bash(dd:if=/dev/random*)",
+      "Bash(mkfs:*)",
+      "Bash(fdisk:*)",
+      "Bash(parted:*)",
+      "Bash(shutdown:*)",
+      "Bash(reboot:*)",
+      "Bash(halt:*)",
+      "Bash(poweroff:*)",
+      "Bash(*fork bomb*)",
+      "Bash(bash:-c*)",
+      "Bash(sh:-c*)",
+      "Bash(zsh:-c*)",
+      "Bash(find * -exec*)",
+      "Bash(find * -delete*)",
+      "Bash(dd:of=/dev/*)",
+      "Bash(dd:if=/dev/urandom*)",
+      "Bash(wget * | sh)",
+      "Bash(curl * | sh)",
+      "Bash(wget * | bash)",
+      "Bash(curl * | bash)",
+      "Bash(* | sh)",
+      "Bash(* | bash)"
+    ],
+    "ask": [
+      "mcp__git__git_reset",
+      "Bash(git:push*)",
+      "Bash(git:pull*)",
+      "Bash(git:merge*)",
+      "Bash(git:rebase*)",
+      "Bash(git:checkout*)",
+      "Bash(git:switch*)",
+      "Bash(git:cherry-pick*)",
+      "Bash(git:reset*)",
+      "Bash(git:restore*)",
+      "Bash(git:clean*)",
+      "Bash(pip:install*)",
+      "Bash(pip3:install*)",
+      "mcp__pd-tools__subfinder",
+      "mcp__pd-tools__dnsx",
+      "mcp__pd-tools__naabu",
+      "mcp__pd-tools__httpx",
+      "mcp__pd-tools__katana",
+      "mcp__pd-tools__nuclei",
+      "mcp__pd-tools__bug_bounty_workflow",
+      "Bash(nmap:*)",
+      "Bash(masscan:*)",
+      "Bash(nikto:*)",
+      "Bash(gobuster:*)",
+      "Bash(dirb:*)",
+      "Bash(dirsearch:*)",
+      "Bash(ffuf:*)",
+      "Bash(wfuzz:*)",
+      "Bash(sqlmap:*)",
+      "Bash(nuclei:*)",
+      "Bash(httpx:*)",
+      "Bash(subfinder:*)",
+      "Bash(amass:*)",
+      "Bash(theHarvester:*)",
+      "Bash(recon-ng:*)",
+      "Bash(hydra:*)",
+      "Bash(john:*)",
+      "Bash(hashcat:*)",
+      "Bash(medusa:*)",
+      "Bash(sherlock:*)",
+      "Bash(maigret:*)",
+      "Bash(holehe:*)",
+      "Bash(spiderfoot:*)",
+      "Bash(snoop:*)",
+      "Bash(bbot:*)",
+      "Bash(searchsploit:*)",
+      "Bash(msfconsole:*)",
+      "Bash(msfvenom:*)",
+      "Bash(sploitscan:*)",
+      "Bash(radare2:*)",
+      "Bash(r2:*)",
+      "Bash(ghidra:*)",
+      "Bash(gdb:*)",
+      "Bash(ltrace:*)",
+      "Bash(strace:*)",
+      "Bash(docker:run*)",
+      "Bash(docker:build*)",
+      "Bash(docker:exec*)",
+      "Bash(docker:stop*)",
+      "Bash(docker:rm*)",
+      "Bash(docker:rmi*)",
+      "Bash(docker-compose:up*)",
+      "Bash(docker-compose:down*)",
+      "Bash(docker-compose:build*)",
+      "Bash(kubectl:apply*)",
+      "Bash(kubectl:delete*)",
+      "Bash(kubectl:exec*)",
+      "Bash(kubectl:edit*)",
+      "Bash(kubectl:scale*)",
+      "Bash(kubectl:rollout*)",
+      "Bash(helm:install*)",
+      "Bash(helm:upgrade*)",
+      "Bash(helm:rollback*)",
+      "Bash(helm:uninstall*)",
+      "Bash(helm:delete*)",
+      "Bash(helm:repo add*)",
+      "Bash(helm:repo update*)",
+      "Bash(helm:repo remove*)",
+      "Bash(helm:push*)",
+      "Bash(helm:pull*)",
+      "Bash(helm:package*)",
+      "Bash(helm:dependency update*)",
+      "Bash(helm:dependency build*)",
+      "Bash(helm:create*)",
+      "Bash(helm:registry*)",
+      "Bash(helm:plugin*)",
+      "Bash(helmfile:sync*)",
+      "Bash(helmfile:apply*)",
+      "Bash(helmfile:destroy*)",
+      "Bash(helmfile:delete*)",
+      "Bash(terraform:apply*)",
+      "Bash(terraform:destroy*)",
+      "Bash(terraform:init*)",
+      "Bash(ansible-playbook:*)",
+      "Bash(ansible:*)",
+      "Bash(nc:*)",
+      "Bash(netcat:*)",
+      "Bash(ncat:*)",
+      "Bash(socat:*)",
+      "Bash(curl:-X*)",
+      "Bash(curl:-d*)",
+      "Bash(curl:--data*)",
+      "Bash(sudo:*)",
+      "Bash(su:*)",
+      "Bash(rm:*)",
+      "Bash(mv:*)",
+      "Bash(cp:*)",
+      "Bash(chmod:*)",
+      "Bash(chown:*)",
+      "Bash(systemctl:*)",
+      "Bash(service:*)",
+      "Bash(mutmut:run*)",
+      "Bash(cosmic-ray:*)",
+      "Bash(go-mutesting:*)",
+      "Bash(gremlins:*)",
+      "Bash(litmusctl:create*)",
+      "Bash(litmusctl:delete*)",
+      "Bash(pumba:*)",
+      "Bash(toxiproxy-cli:create*)",
+      "Bash(toxiproxy-cli:toxic*)",
+      "Bash(toxiproxy-cli:delete*)",
+      "Bash(stress-ng:*)",
+      "Bash(gatling:*)",
+      "Bash(jmeter:*)"
+    ],
+    "defaultMode": "default"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/session_start_reinforcement.py 2>/dev/null",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/session_startup_hook.py 2>/dev/null",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/session_startup_dashboard.py 2>/dev/null",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/session_health_check.py 2>/dev/null",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/mcp-servers/gc-mcp/gc-mcp --quick",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/session_end_hook.py 2>/dev/null",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/settings_backup_hook.py 2>/dev/null",
+            "timeout": 2
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/input_validation_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/hitl_approval_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/gitleaks_precommit_hook.py 2>/dev/null",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/evaluation/hooks/unified_budget_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/evaluation/hooks/unified_tool_metrics_hook.py 2>/dev/null",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/evaluation/hooks/unified_cost_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/code_review_hook.py 2>/dev/null",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/filemap_update_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/scope_tracking_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/evaluation/hooks/tool_failure_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/user_prompt_submit_hook.py 2>/dev/null",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/pre_compact_hook.py 2>/dev/null",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/stop_check_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/subagent_context_hook.py 2>/dev/null",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/task_quality_gate_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "InstructionsLoaded": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/instructions_audit_hook.py 2>/dev/null",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/auto_permission_hook.py 2>/dev/null",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/post_compact_hook.py 2>/dev/null",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  },
+  "worktree": {
+    "baseRef": "fresh"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline.sh"
+  },
+  "outputStyle": "Operator",
+  "language": "English",
+  "effortLevel": "xhigh",
+  "editorMode": "normal",
+  "verbose": true,
+  "autoCompactEnabled": false,
+  "teammateMode": "auto",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "useAutoModeDuringPlan": true,
+  "tui": "fullscreen"
+}

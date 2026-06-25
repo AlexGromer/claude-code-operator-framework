@@ -1,0 +1,76 @@
+<!-- ARCHITECTURE Extension: devops -->
+<!-- Appended to base ARCHITECTURE.md for DevOps/infrastructure projects -->
+
+## 7. Infrastructure Map
+
+### Cloud/On-Prem Overview
+| Resource | Provider | Region | Purpose | Cost |
+|----------|---------|--------|---------|------|
+<!-- | K8s Cluster | Yandex Cloud | ru-central1 | Application hosting | $X/mo | -->
+<!-- | PostgreSQL | Managed DB | ru-central1 | Primary database | $X/mo | -->
+<!-- | S3 | Object Storage | ru-central1 | Static + backups | $X/mo | -->
+
+### Network Topology
+<!-- VPC, subnets, security groups, load balancers -->
+
+## 8. Environments
+
+| Env | Purpose | Cluster | Namespace | URL | Data |
+|-----|---------|---------|-----------|-----|------|
+<!-- | dev | Development | dev-cluster | default | dev.example.com | Synthetic | -->
+<!-- | staging | Pre-prod | prod-cluster | staging | staging.example.com | Anonymized | -->
+<!-- | prod | Production | prod-cluster | production | example.com | Real | -->
+
+### Promotion Path
+<!-- dev → staging → prod, gates, approval process -->
+
+## 9. CI/CD Pipeline
+
+### Pipeline Architecture
+| Stage | Tool | Trigger | Duration | Artifacts |
+|-------|------|---------|----------|-----------|
+<!-- | Build | Docker | Push to main | 3 min | Image → Registry | -->
+<!-- | Test | pytest + k6 | PR | 5 min | Coverage report | -->
+<!-- | Security | trivy + gitleaks | PR | 2 min | SARIF report | -->
+<!-- | Deploy staging | ArgoCD | Merge to main | 5 min | — | -->
+<!-- | Deploy prod | ArgoCD | Manual approval | 5 min | — | -->
+
+### Deployment Strategy
+<!-- Rolling / Blue-Green / Canary / Recreate — and why -->
+
+### Rollback Procedure
+<!-- Steps to rollback, who can trigger, automation -->
+
+## 10. Monitoring Stack
+
+| Layer | Tool | Purpose | Alerting |
+|-------|------|---------|----------|
+<!-- | Metrics | Prometheus + VictoriaMetrics | Time series | Alertmanager → Telegram | -->
+<!-- | Logs | Loki + Promtail | Log aggregation | LogQL alerts | -->
+<!-- | Traces | Jaeger | Distributed tracing | — | -->
+<!-- | Dashboards | Grafana | Visualization | — | -->
+<!-- | Uptime | Blackbox Exporter | Endpoint monitoring | PagerDuty | -->
+
+### Key Alerts
+| Alert | Condition | Severity | Runbook |
+|-------|-----------|----------|---------|
+<!-- | High Error Rate | 5xx > 1% for 5 min | Critical | runbooks/high-error-rate.md | -->
+
+## 11. Infrastructure as Code
+
+| Tool | Purpose | State | Repository |
+|------|---------|-------|------------|
+<!-- | Terraform | Cloud infra | S3 backend | infra/terraform/ | -->
+<!-- | Helm | K8s workloads | ArgoCD | infra/helm/ | -->
+<!-- | Ansible | Server config | — | infra/ansible/ | -->
+
+### Module Structure
+<!-- Terraform modules, Helm charts, Ansible roles layout -->
+
+## 12. Runbooks Index
+
+| Runbook | Scenario | Last Tested | Owner |
+|---------|----------|------------|-------|
+<!-- | runbooks/scale-up.md | Traffic spike | 2026-01-15 | SRE | -->
+<!-- | runbooks/db-failover.md | Primary DB down | 2026-01-20 | DBA | -->
+<!-- | runbooks/rollback.md | Bad deployment | 2026-01-25 | DevOps | -->

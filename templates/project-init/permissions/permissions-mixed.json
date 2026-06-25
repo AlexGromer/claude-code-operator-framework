@@ -1,0 +1,11 @@
+{
+  "type": "mixed",
+  "description": "Multi-domain or unclassified projects. Base permissions only. Domain-specific permissions added via workflow autoloader.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)"
+  ],
+  "ask": [],
+  "deny": [],
+  "mcp_profiles": ["github"]
+}

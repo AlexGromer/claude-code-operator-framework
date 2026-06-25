@@ -1,0 +1,84 @@
+<!-- ARCHITECTURE Extension: development -->
+<!-- Appended to base ARCHITECTURE.md for development projects -->
+
+## 7. C4 Model
+
+### Level 1: System Context
+<!-- External actors and systems interacting with this application -->
+<!-- Use: boxes for systems, stick figures for people, arrows for data flow -->
+
+### Level 2: Container Diagram
+<!-- Major deployable units: web app, API, database, message queue -->
+
+| Container | Technology | Purpose | Communication |
+|-----------|-----------|---------|---------------|
+<!-- | Web Frontend | React + TypeScript | User interface | HTTPS → API | -->
+<!-- | API Server | Python FastAPI | Business logic | gRPC → DB | -->
+<!-- | Database | PostgreSQL 16 | Persistence | TCP :5432 | -->
+<!-- | Cache | Redis 7 | Session + cache | TCP :6379 | -->
+
+### Level 3: Component Diagram
+<!-- Internal structure of key containers -->
+<!-- Document only for complex containers -->
+
+## 8. Module Dependencies
+
+<!-- Dependency map: module → [dependencies] -->
+<!-- Keep in sync with FILEMAP.md Module Dependency Map section -->
+
+| Module | Dependencies | Dependents | Coupling |
+|--------|-------------|-----------|----------|
+<!-- | src/api/ | src/models/, src/services/ | — | Low | -->
+<!-- | src/services/ | src/models/, src/db/ | src/api/ | Medium | -->
+
+## 9. API Contracts
+
+### Internal APIs
+| Endpoint | Method | Auth | Request | Response | Owner |
+|----------|--------|------|---------|----------|-------|
+<!-- | /api/v1/users | GET | JWT | query params | User[] | backend | -->
+
+### External Integrations
+| Service | Protocol | Auth | Rate Limit | Fallback |
+|---------|----------|------|------------|----------|
+<!-- | Stripe | REST | API Key | 100 rps | Queue retry | -->
+
+### API Versioning Strategy
+<!-- e.g., URL path (/v1/), header, query param -->
+
+## 10. Database Schema
+
+### Entity-Relationship Overview
+<!-- Key entities and relationships -->
+
+| Entity | Table | Key Fields | Relations |
+|--------|-------|------------|-----------|
+<!-- | User | users | id, email, created_at | has_many: orders | -->
+
+### Migration Strategy
+<!-- Tool (Alembic/Flyway/dbmate), naming convention, rollback policy -->
+
+## 11. CI/CD Pipeline
+
+### Pipeline Stages
+| Stage | Tool | Trigger | Duration | Gate |
+|-------|------|---------|----------|------|
+<!-- | Lint | ruff + mypy | PR | ~30s | Block on error | -->
+<!-- | Test | pytest | PR | ~2min | Block on fail | -->
+<!-- | Build | Docker | Merge to main | ~3min | — | -->
+<!-- | Deploy staging | ArgoCD | Auto | ~5min | Health check | -->
+<!-- | Deploy prod | ArgoCD | Manual | ~5min | Approval + canary | -->
+
+### Branch Strategy
+<!-- e.g., trunk-based, gitflow, GitHub flow -->
+
+## 12. Environments
+
+| Environment | Purpose | URL | Infra | Data |
+|-------------|---------|-----|-------|------|
+<!-- | local | Development | localhost:8000 | Docker Compose | Seed data | -->
+<!-- | staging | Integration | staging.example.com | K8s | Anonymized prod | -->
+<!-- | production | Live | example.com | K8s | Real | -->
+
+### Environment Parity
+<!-- What differs between environments and why -->

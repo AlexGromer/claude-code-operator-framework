@@ -1,0 +1,91 @@
+<!-- ARCHITECTURE Extension: dfir -->
+<!-- Appended to base ARCHITECTURE.md for DFIR/incident response projects -->
+
+## 7. Evidence Chain
+
+### Evidence Registry
+| ID | Date Acquired | Source | Type | Hash (SHA256) | Custodian |
+|----|--------------|--------|------|---------------|-----------|
+<!-- | EVD-001 | 2026-01-15 | Server-01 | Memory dump | abc123... | analyst-1 | -->
+<!-- | EVD-002 | 2026-01-15 | Server-01 | Disk image | def456... | analyst-1 | -->
+
+### Chain of Custody
+| Evidence ID | Date | Action | From | To | Notes |
+|------------|------|--------|------|-----|-------|
+<!-- | EVD-001 | 2026-01-15 10:00 | Acquired | Server-01 | Workstation | LiME via SSH | -->
+<!-- | EVD-001 | 2026-01-15 10:30 | Verified | — | — | SHA256 match | -->
+
+### Storage & Handling
+<!-- Evidence storage location, encryption, access control, retention -->
+
+## 8. Toolchain
+
+| Category | Tool | Purpose | Output |
+|----------|------|---------|--------|
+<!-- | Memory | Volatility 3 | RAM analysis | Process list, network, registry | -->
+<!-- | Disk | Autopsy / Sleuthkit | Filesystem analysis | Timeline, deleted files | -->
+<!-- | Timeline | Plaso / log2timeline | Super timeline | CSV / Elasticsearch | -->
+<!-- | Detection | YARA / Sigma | IOC matching | Alerts | -->
+<!-- | Network | Zeek / Wireshark | PCAP analysis | Connection logs | -->
+<!-- | Triage | Chainsaw / Hayabusa | Windows event logs | Findings | -->
+
+## 9. Analysis Pipeline
+
+### Phase 1: Triage
+<!-- Quick assessment: what happened, how bad, what's affected -->
+
+### Phase 2: Collection
+<!-- Evidence acquisition: memory, disk, logs, network -->
+
+### Phase 3: Analysis
+<!-- Deep dive: timeline reconstruction, artifact analysis, malware analysis -->
+
+### Phase 4: Containment
+<!-- Isolation measures, credential resets, firewall rules -->
+
+### Phase 5: Eradication
+<!-- Remove threat, patch vulnerabilities, harden systems -->
+
+### Phase 6: Recovery
+<!-- Restore services, monitoring, validation -->
+
+## 10. Timeline
+
+<!-- Master timeline from all evidence sources -->
+
+| Timestamp (UTC) | Source | Event | Significance |
+|-----------------|--------|-------|-------------|
+<!-- | 2026-01-15 03:00 | Auth logs | Brute force from 1.2.3.4 | Initial access attempt | -->
+<!-- | 2026-01-15 03:15 | Auth logs | Successful login admin | Compromise | -->
+<!-- | 2026-01-15 03:20 | Process | powershell.exe spawned | Execution | -->
+
+## 11. IOC Registry
+
+| IOC | Type | Source | Confidence | Context |
+|-----|------|--------|-----------|---------|
+<!-- | 1.2.3.4 | IPv4 | Firewall logs | High | C2 server | -->
+<!-- | evil.exe | Filename | Disk image | High | Dropper | -->
+<!-- | abc123...def | SHA256 | Malware analysis | High | Payload hash | -->
+
+### MITRE ATT&CK Mapping
+| Tactic | Technique | Evidence | Confidence |
+|--------|-----------|----------|-----------|
+<!-- | Initial Access | T1078 Valid Accounts | Auth logs | High | -->
+<!-- | Execution | T1059.001 PowerShell | Process logs | High | -->
+
+## 12. Reporting
+
+### Report Structure
+1. Executive Summary (non-technical)
+2. Incident Overview (timeline, impact)
+3. Technical Analysis (evidence, findings)
+4. IOC List (for sharing/detection)
+5. Recommendations (remediation, prevention)
+6. Appendices (raw data, tool output)
+
+### Notification Requirements
+| Authority | Trigger | Deadline | Status |
+|-----------|---------|----------|--------|
+<!-- | Management | Any incident | ASAP | Done | -->
+<!-- | НКЦКИ / ГосСОПКА | КИИ incident | 24h | Pending | -->
+<!-- | Роскомнадзор | PD breach | 72h | N/A | -->

@@ -1,0 +1,4 @@
+config-version: {{VERSION}}
+initialized: {{TIMESTAMP}}
+stack: {{STACK}}
+domains: {{DOMAINS}}

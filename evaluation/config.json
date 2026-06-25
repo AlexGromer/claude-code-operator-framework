@@ -1,0 +1,24 @@
+{
+  "shell": "zsh",
+  "shell_rc_file": "~/.zshrc",
+  "show_stats_on_days": ["monday"],
+  "show_tier2_report": true,
+  "show_gap_summary": true,
+  "thresholds": {
+    "cache_hit_rate_min": 0.70,
+    "tool_error_rate_max": 0.05,
+    "latency_increase_max": 0.20,
+    "routing_confidence_min": 0.40,
+    "context_utilization_max": 0.95
+  },
+  "gap_detection": {
+    "enabled": true,
+    "auto_create_gaps": true,
+    "priority_mapping": {
+      "RELIABILITY": "P1",
+      "CAPACITY": "P1",
+      "PERFORMANCE": "P2",
+      "ACCURACY": "P2"
+    }
+  }
+}

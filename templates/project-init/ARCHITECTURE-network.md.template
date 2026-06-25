@@ -1,0 +1,85 @@
+<!-- ARCHITECTURE Extension: network -->
+<!-- Appended to base ARCHITECTURE.md for network infrastructure projects -->
+
+## 7. Network Topology
+
+### Physical Topology
+<!-- Data centers, server rooms, rack layout -->
+
+### Logical Topology
+<!-- Network diagram: segments, interconnections, routing -->
+
+### Address Plan
+| Segment | VLAN ID | Subnet | Gateway | Purpose | DHCP |
+|---------|---------|--------|---------|---------|------|
+<!-- | Management | 10 | 10.0.10.0/24 | 10.0.10.1 | Network management | No | -->
+<!-- | Servers | 20 | 10.0.20.0/24 | 10.0.20.1 | Production servers | No | -->
+<!-- | Users | 30 | 10.0.30.0/24 | 10.0.30.1 | Employee workstations | Yes | -->
+<!-- | Guest | 40 | 10.0.40.0/24 | 10.0.40.1 | Guest WiFi | Yes | -->
+<!-- | DMZ | 50 | 10.0.50.0/24 | 10.0.50.1 | Public services | No | -->
+
+## 8. VLANs & Segmentation
+
+### VLAN Matrix
+| VLAN | Name | Trunk Ports | Access Ports | ACL |
+|------|------|-------------|-------------|-----|
+<!-- | 10 | Mgmt | sw01:ge1, sw02:ge1 | — | Restrict to admins | -->
+
+### Inter-VLAN Routing
+<!-- Router-on-a-stick, L3 switch, firewall-based -->
+
+### Micro-segmentation
+<!-- If applicable: NSX, Calico, firewall zones -->
+
+## 9. Equipment List
+
+| Hostname | Model | Role | Location | IP | Firmware | Support |
+|----------|-------|------|----------|----|---------|---------|
+<!-- | fw-01 | MikroTik CCR2004 | Core Router | DC1-R1 | 10.0.10.1 | 7.14 | Active | -->
+<!-- | sw-01 | MikroTik CRS326 | Core Switch | DC1-R1 | 10.0.10.2 | 7.14 | Active | -->
+<!-- | ap-01 | MikroTik cAP ax | WiFi AP | Office-1F | DHCP | 7.14 | Active | -->
+
+### Credentials Vault
+<!-- Where network device credentials are stored (NOT the credentials themselves!) -->
+<!-- e.g., HashiCorp Vault path, KeePass location -->
+
+## 10. Monitoring
+
+| Target | Tool | Protocol | Interval | Alerts |
+|--------|------|----------|----------|--------|
+<!-- | All network devices | Zabbix | SNMP v3 | 60s | Telegram | -->
+<!-- | Uplinks | LibreNMS | SNMP v3 | 30s | Email | -->
+<!-- | WiFi | Zabbix | API | 300s | — | -->
+
+### Key Metrics
+| Metric | Threshold | Action |
+|--------|-----------|--------|
+<!-- | Interface utilization | > 80% | Investigate / upgrade | -->
+<!-- | Packet loss | > 0.1% | Check cabling / config | -->
+<!-- | BGP session | Down | Page on-call | -->
+
+## 11. Diagrams
+
+### Network Diagram Locations
+| Diagram | Format | Location | Last Updated |
+|---------|--------|----------|-------------|
+<!-- | Physical topology | draw.io | docs/network/physical.drawio | 2026-01-15 | -->
+<!-- | Logical topology | draw.io | docs/network/logical.drawio | 2026-01-15 | -->
+<!-- | Rack layout | draw.io | docs/network/rack.drawio | 2026-01-15 | -->
+
+### Diagram Standards
+<!-- Tool (draw.io, Visio, NetBox), naming convention, update frequency -->
+
+## 12. Change Management
+
+| ID | Date | Change | Approved By | Rollback | Status |
+|----|------|--------|------------|----------|--------|
+<!-- | CHG-001 | 2026-01-15 | Add VLAN 60 for IoT | Network Admin | Remove VLAN config | Completed | -->
+
+### Change Process
+1. Request (describe change, impact, rollback plan)
+2. Review (peer review, manager approval)
+3. Schedule (maintenance window)
+4. Execute (with monitoring)
+5. Verify (test connectivity, check alerts)
+6. Document (update this file, diagrams, NetBox)

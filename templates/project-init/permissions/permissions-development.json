@@ -1,0 +1,27 @@
+{
+  "type": "development",
+  "description": "Standard software development projects. Covers build tools, testing, Docker read-only, and GitHub integration.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)",
+    "Bash(npm:*)",
+    "Bash(pytest:*)",
+    "Bash(make:*)",
+    "Bash(docker:ps*)",
+    "Bash(docker:images*)",
+    "Bash(docker:logs*)",
+    "mcp__github__create_pull_request",
+    "mcp__github__create_issue"
+  ],
+  "ask": [
+    "Bash(docker:run*)",
+    "Bash(docker:build*)",
+    "Bash(docker:exec*)",
+    "Bash(sudo:*)",
+    "Bash(rm:*)"
+  ],
+  "deny": [],
+  "mcp_profiles": [
+    "github"
+  ]
+}

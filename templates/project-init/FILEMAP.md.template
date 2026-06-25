@@ -1,0 +1,53 @@
+# FILEMAP — {{project_name}}
+
+<!-- Auto-generated and manually maintained file map.
+     Purpose: avoid redundant file searches, provide context to subagents.
+     Update: on file create/delete/major refactor. -->
+
+## Quick Reference
+
+| Path | Purpose | Key Exports / Contents |
+|------|---------|----------------------|
+<!-- | src/main.py | Entry point | main(), parse_args() | -->
+<!-- | src/config.py | Configuration | Config dataclass, load_config() | -->
+<!-- | tests/test_main.py | Main tests | TestMain class | -->
+
+## Directory Structure
+
+```
+{{project_root}}/
+├── src/              # Source code
+├── tests/            # Test suite
+├── docs/             # Documentation
+├── config/           # Configuration files
+└── scripts/          # Build/deploy scripts
+```
+
+## Module Dependency Map
+
+<!-- Format: module → [dependencies]
+     Example: src/api/routes.py → [src/models/user.py, src/services/auth.py] -->
+
+## File Categories
+
+### Entry Points
+<!-- Files that start execution: main, CLI, API server -->
+
+### Core Logic
+<!-- Business logic, domain models, algorithms -->
+
+### Configuration
+<!-- Settings, env files, feature flags -->
+
+### Infrastructure
+<!-- DB migrations, Docker, CI/CD, deploy scripts -->
+
+### Tests
+<!-- Test files mapped to source files they test -->
+
+## Metadata
+
+- Generated: {{date}}
+- Last updated: {{date}}
+- File count: {{count}}
+- Auto-update hook: project-init (on significant changes)

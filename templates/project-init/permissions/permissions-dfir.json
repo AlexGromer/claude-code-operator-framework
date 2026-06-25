@@ -1,0 +1,24 @@
+{
+  "type": "dfir",
+  "description": "Digital forensics and incident response. Evidence handling requires careful permission control.",
+  "allow": [
+    "Edit({{project_path}}/**)",
+    "Write({{project_path}}/**)",
+    "Bash(strings:*)",
+    "Bash(file:*)",
+    "Bash(xxd:*)",
+    "Bash(hexdump:*)"
+  ],
+  "ask": [
+    "Bash(volatility:*)",
+    "Bash(vol3:*)",
+    "Bash(plaso:*)",
+    "Bash(log2timeline:*)",
+    "Bash(yara:*)",
+    "Bash(chainsaw:*)",
+    "Bash(hayabusa:*)",
+    "Bash(autopsy:*)"
+  ],
+  "deny": [],
+  "mcp_profiles": ["dfir", "intel", "github"]
+}

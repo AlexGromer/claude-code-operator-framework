@@ -1,0 +1,49 @@
+# Atomic Workflow Block (AWB) Contract Template
+# Used by UEP pipeline for workflow composition
+
+name: BLOCK_NAME
+category: discovery|analysis|creation|validation|operation|lifecycle|meta
+description: "What this block does in one sentence"
+
+inputs:
+  param1:
+    type: string
+    description: "Description of input parameter"
+    required: true
+  param2:
+    type: list
+    description: "Description of optional parameter"
+    required: false
+
+outputs:
+  result:
+    type: dict
+    description: "Description of output"
+  artifacts:
+    type: list
+    description: "List of file paths created"
+
+requires:
+  - "PREVIOUS_BLOCK or data dependency"
+
+tools:
+  - "tool_name_1"
+  - "mcp__server__method"
+  - "Bash"
+
+model: sonnet  # haiku|sonnet|opus
+
+mcp_profiles:
+  - "profile_name"  # or empty list
+
+criteria:
+  - "Acceptance criterion 1"
+  - "Acceptance criterion 2"
+
+tests:
+  - "Expected output format is valid"
+  - "All required fields present"
+
+edge_cases:
+  - "What if input is empty?"
+  - "What if external service unavailable?"

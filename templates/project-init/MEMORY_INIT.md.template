@@ -1,0 +1,27 @@
+# Project: {{name}}
+
+## Type
+{{project_type}}
+
+## Stack
+{{detected_stack}}
+
+## Domains
+{{domains}}
+
+## Working Dir
+{{working_dir}}
+
+## Git
+{{git_status}}
+
+## Sub-Directories
+- reports/ — delivery and audit reports
+- scans/ — scan results
+- data/ — raw data and exports
+
+## Key Files
+[auto-populated by scanning project root]
+
+## Decisions
+[populated during work]

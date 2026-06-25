@@ -1,0 +1,35 @@
+<!-- ARCHITECTURE Extension: chat -->
+<!-- Minimal extension for chat/reference/quick-consultation projects -->
+
+## 7. Topic
+
+### Focus Area
+<!-- What is this consultation/reference project about? -->
+{{chat_topic}}
+
+### Context
+<!-- Background information, why this topic is being explored -->
+
+## 8. Key References
+
+| Resource | Type | URL/Path | Relevance |
+|----------|------|----------|-----------|
+<!-- | Official docs | Documentation | https://docs.example.com | Primary source | -->
+<!-- | RFC 1234 | Specification | https://rfc-editor.org/rfc/rfc1234 | Protocol definition | -->
+<!-- | Research paper | Academic | arxiv.org/abs/... | Theoretical basis | -->
+
+## 9. Notes
+
+### Session Notes
+<!-- Running notes from conversations and research -->
+
+### Key Decisions
+<!-- Quick decisions made during this project (lightweight ADR) -->
+| Date | Decision | Reason |
+|------|----------|--------|
+<!-- | 2026-01-15 | Use approach X over Y | Simpler, meets requirements | -->
+
+### Open Questions
+<!-- Questions still to be resolved -->
+- <!-- Question 1 -->
+- <!-- Question 2 -->
