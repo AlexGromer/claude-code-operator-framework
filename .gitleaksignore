@@ -1,0 +1,20 @@
+# documentation sample values and test fixtures (no real credentials): sk-1234567890..., NetBox example token 0123456789abcdef..., md5('password'), sample JWTs, variables like ${VT_API_KEY}, fake secrets for detector tests
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:agents/cybint-analyst.md:curl-auth-header:55
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:agents/mobile-pentester.md:curl-auth-header:100
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:agents/mobile-pentester.md:curl-auth-header:105
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:agents/mobile-pentester.md:curl-auth-header:110
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/blue-purple-dfir/malware_triage_example.md:curl-auth-header:54
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/education/ctf_writeup.md:generic-api-key:145
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/education/ctf_writeup.md:jwt:224
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/implementation/feature_workflow.md:curl-auth-header:564
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/implementation/feature_workflow.md:generic-api-key:126
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/implementation/feature_workflow.md:generic-api-key:553
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/network-infrastructure/netbox_initial_setup.md:generic-api-key:53
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/prompting/cot_vs_react.md:generic-api-key:251
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/prompting/prompt_optimization.md:curl-auth-header:236
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/prompting/prompt_optimization.md:curl-auth-header:358
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/security/auth_bypass_example.md:generic-api-key:22
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/tech-stack/stack_migration.md:curl-auth-user:32
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/writing/api_documentation.md:curl-auth-header:118
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/writing/api_documentation.md:curl-auth-header:130
+bc92c75508eddcaf1099f79b707bcc938d9ae8ce:examples/writing/api_documentation.md:generic-api-key:756
